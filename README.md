@@ -1,0 +1,3 @@
+# <div align="center"> TAREA INTRODUCCIÓN MVN-GIT Y HEROKU</div>
+## <div align="center"> Descripción de la arquitectura</div>
+En la parte del back end tenemos 3 endpoint (Index, toCelsius, To Fahrenheit) donde cada uno se encarga de recibir la conexion al servidor, dependiendo de cual sea tiene funciones diferentes, el index es la landing page donde podemos ver el formulario HTML dentro del formulario hay 2 botones los cuales cada uno llama a otro end point para procesar la informacion y retornar la respuesta de la operacion
