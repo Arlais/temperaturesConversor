@@ -49,45 +49,15 @@ public class App {
         return pageContent;
     }
 
-    private static String ToFahrenheit(Request req, Response res) {
+    private static String ToCelsius(Request req, Response res) {
         System.out.println(req);
         System.out.println(req.queryParams("temperature"));
-        return String.valueOf((Float.parseFloat(req.queryParams("temperature")) - 32) * 5 / 9)+ "";
+        return (Float.parseFloat(req.queryParams("temperature")) - 32) * 5 / 9+ "";
     }
 
-    private static String ToCelsius(Request req, Response res) {
+    private static String ToFahrenheit(Request req, Response res) {
         System.out.println(req.queryParams("temperature"));
-        return String.valueOf((Float.parseFloat(req.queryParams("temperature")) * 9 / 5) + 32)+ "";
-    }
-    /*public static void main(String[] args) {
-        port(getPort());
-        get("/inputdata", (req, res) -> inputDataPage(req, res));
-        get("/results", (req, res) -> resultsPage(req, res));
+        return (Float.parseFloat(req.queryParams("temperature")) * 9 / 5) + 32 + "";
     }
 
-    private static String inputDataPage(Request req, Response res) {
-        String pageContent
-                = "<!DOCTYPE html>"
-                + "<html>"
-                + "<body>"
-                + "<h2>HTML Forms</h2>"
-                + "<form action=\"/results\">"
-                + "  First name:<br>"
-                + "  <input type=\"text\" name=\"firstname\" value=\"Mickey\">"
-                + "  <br>"
-                + "  Last name:<br>"
-                + "  <input type=\"text\" name=\"lastname\" value=\"Mouse\">"
-                + "  <br><br>"
-                + "  <input type=\"submit\" value=\"Submit\">"
-                + "</form>"
-                + "<p>If you click the \"Submit\" button, the form-data will be sent to a page called \"/results\".</p>"
-                + "</body>"
-                + "</html>";
-        return pageContent;
-    }
-
-    private static String resultsPage(Request req, Response res) {
-        return req.queryParams("firstname") + " " +
-                req.queryParams("lastname");
-    }*/
 }
